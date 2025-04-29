@@ -1,0 +1,76 @@
+﻿@model AdminLoginViewModel
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="~/css/animate.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bootstrap-select.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/flexslider.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/imagehover.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/imp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/jquery.bootstrap-touchspin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/jquery.bxslider.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/jquery.fancybox.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layers.css asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navigation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/owl.carousel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/prettyPhoto.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/settings.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <section class="contact-area" style="display: flex !important; justify-content: center !important;align-items: center !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <div class="title">
+                        <h2>GİRİŞ YAP</h2>
+                    </div>
+                        <form asp-action="Index" class="default-form" >
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <input asp-for="Username" type="text" placeholder="Kullanıcı Adı" />
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                   <input asp-for="Password" type="password" placeholder="Şifre" />
+                            </div>
+                           
+                        </div>
+                      
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                <button class="thm-btn bg-1" type="submit" >Giriş Yap</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!--End contact area-->
+
+</body>
+</html>
