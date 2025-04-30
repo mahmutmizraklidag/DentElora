@@ -1,0 +1,137 @@
+@model Treatment
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>@Model.Title</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Root Canel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area--> 
+
+<!--Start services single area-->
+<section class="services-single-area">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</section>
+<!--End services single area-->
+<!--Start service single area-->
+<section id="service-single-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right">
+
+                <div class="top-content-box">
+                    <div class="sec-title">
+                        <h1>@Model.Title</h1>
+                        <span class="border"></span>
+                    </div>
+                    <div class="text-box">
+                        <p>@Model.Description</p>
+                        <p>Denouncing pleasure and praising pain was born wewill give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness rationally.</p>
+                    </div>
+                    <div class="img-box">
+                        <div class="row">
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <img src="images/services/service-single/v1-1.jpg" alt="Awesome Image">
+                                    </div>
+                                    <h3>Before</h3>
+                                </div>
+                            </div>
+                            <!--End single item-->
+                            <!--Start single item-->
+                            <div class="col-md-6">
+                                <div class="single-item">
+                                    <div class="img-holder">
+                                        <img src="images/services/service-single/v1-2.jpg" alt="Awesome Image">
+                                    </div>
+                                    <h3>After</h3>
+                                </div>
+                            </div>
+                            <!--End single item-->
+                        </div>
+                    </div>
+                </div>
+
+           
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 pull-left">
+                <div class="service-sidebar">
+                    <!--Start single sidebar-->
+                    @await Component.InvokeAsync("TreatmentsSide")
+                    <!--Ens single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Çalýþma Saatleri</h3>
+                        </div>
+                        <ul class="opening-time">
+                            <li>Pzt - Cum: <span>10.00 to 18.00</span></li>
+                            <li>Saturday: <span>10.00 to 16.00</span></li>
+                        </ul>
+                    </div>
+                    <!--Ens single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="title">
+                            <h3>Quick Contact</h3>
+                        </div>
+                        <div class="contact-us">
+                            <ul class="contact-info">
+                                <li>
+                                    <div class="icon-holder map">
+                                        <span class="flaticon-pin"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <h5>Park Drive, Varick 2nd Str <br>NY 10012, USA</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-holder">
+                                        <span class="flaticon-interface"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <h5>Support@Dentalcare.com</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-holder">
+                                        <span class="flaticon-technology-1"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <h5>(123) 0200 12345 & 7890</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Ens single sidebar-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End service Single area--> 

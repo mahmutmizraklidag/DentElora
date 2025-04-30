@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DentElora</title>
 
-    <link rel="stylesheet" href="~/css/animate.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/bootstrap-select.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/flexslider.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/imagehover.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/imp.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.bootstrap-touchspin.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.bxslider.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.fancybox.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/layers.css asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/navigation.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/owl.carousel.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/owl.theme.default.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/prettyPhoto.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/settings.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -43,10 +23,37 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Main" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Contacts" asp-action="Index">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Doctors" asp-action="Index">Doktorlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="FAQs" asp-action="Index">SSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Galleries" asp-action="Index">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Sliders" asp-action="Index">Slider</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Treatments" asp-action="Index">Tedaviler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="TreatmentPhotoes" asp-action="Index">Tedavi Resimleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">Kullanıcı</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="HomeInfoes" asp-action="Index">Anasayfa Bilgi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Services" asp-action="Index">Hizmetler</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Login" asp-action="Logout">Oturumu Kapat</a>

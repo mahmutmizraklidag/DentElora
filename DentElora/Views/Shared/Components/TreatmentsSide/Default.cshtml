@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Treatment>
+
+@{
+
+    var treatment = Model;
+
+ }
+<div class="single-sidebar">
+    <ul class="all-service">
+        @foreach (var downmenu in treatment)
+        {
+            <li>
+                <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@downmenu.Id" >@downmenu.Title</a>
+            </li>
+        }
+        </ul>
+    </div>
+   

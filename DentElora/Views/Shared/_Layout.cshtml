@@ -4,40 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DentElora</title>
-   @*  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/DentElora.styles.css" asp-append-version="true" /> *@
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="images/favicon/fav.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/favicon/fav.png" sizes="16x16">
-
-    <link rel="stylesheet" href="~/css/animate.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/bootstrap-select.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/flexslider.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/imagehover.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/imp.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.bootstrap-touchspin.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.bxslider.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/jquery.fancybox.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/layers.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/navigation.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/owl.carousel.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/owl.theme.default.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/prettyPhoto.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/settings.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/fonts/flaticon/flaticon.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-   @*  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Font Awesome 4 (klasik 'fa' prefixli ikonlar için) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
- @*    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"> *@
- @*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
    
 </head>
 <body>
@@ -63,18 +31,12 @@
         </nav>
     </header> *@
     <partial name="_HeaderPartial" />
-    <div class="container">
-        <main role="main" class="pb-3">
+  
             @RenderBody()
-        </main>
-    </div>
+     
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - DentElora - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <!-- main jQuery -->
+    <partial name="_FooterPartial" />
+    <<!-- main jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Wow Script -->
     <script src="js/wow.min.js"></script>

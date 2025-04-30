@@ -1,8 +1,170 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model DentElora.Models.HomePageViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+@await Html.PartialAsync("_SliderPartial", Model.Sliders)
+
+<!--Start welcome area-->
+<section class="welcome-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h1>Welcome to Dentalcare</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <!--Start single item-->
+            @foreach(var info in Model.HomeInfos)
+            {
+                <div class="col-md-4">
+                    <div class="single-item text-center">
+                        <div class="icon-holder">
+                            <span class="@info.Icon"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>@info.Title</h3>
+                            <p>@info.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+            <!--End single item-->
+           
+        </div>
+    </div>
+</section>
+<!--End welcome area-->
+<!--Start special services area-->
+<section class="special-services-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top">
+                    <div class="sec-title pull-left">
+                        <h1>Tedaviler</h1>
+                        <span class="border"></span>
+                        <div class="text-box">
+                            <h3>Affortable and Quality Dental Care</h3>
+                            <p>How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer.</p>
+                        </div>
+                    </div>
+                    <div class="icon-box pull-right">
+                        <img src="images/services/icon.png" alt="Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="service-carousel">
+                    <!--Start single item-->
+                    @foreach(var service in Model.Treatments)
+                    {
+                        <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                            <div class="img-holder">
+                                <img src="images/services/1.jpg" alt="Awesome Image">
+                                <div class="overlay-style-one">
+                                    <div class="box">
+                                        <div class="content">
+                                            <p>@service.shortDescription</p>
+                                            <a href="#">Devamını Oku<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="icon-box">
+                                    <div class="icon">
+                                        <span class="@service.İcon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-holder">
+                                <a href="#"><h3>@service.Title</h3></a>
+                            </div>
+                        </div>
+                    }
+                    
+                    <!--End single item-->
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End special services area-->
+<!--Start about us area-->
+<section class="about-us-area">
+    <div class="container">
+        <div class="sec-title  pull-left">
+            <h1>Hizmetlerimiz</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="right-content">
+                    <div class="row">
+                        @foreach(var service in Model.Services)
+                        {
+                            <!--Start single item-->
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="single-item">
+                                    <div class="icon-holder">
+                                        <span class="@service.Icon"></span>
+                                    </div>
+                                    <div class="text">
+                                        <h3>@service.Title</h3>
+                                        <p>@service.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End single item-->
+                        }
+                    
+                      
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End about us area-->
+
+<!--Start team area-->
+<section class="team-area">
+    <div class="container">
+        <div class="sec-title">
+            <h1>Hekimlerimiz</h1>
+            <span class="border"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="team-carousel">
+                    @foreach(var doc in Model.Doctors)
+                    {
+                        <!--Start single team member-->
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="images/team/1.jpg" alt="Awesome Image">
+                                <div class="overlay-one">
+                                    <div class="overlay-inner">
+                                        <div class="content"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="text-holder text-center">
+                                <h3>@doc.Name</h3>
+                                <span>@doc.Role</span>
+                                
+                            </div>
+                        </div>
+                        <!--End single team member-->
+                    }
+                  
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End team area-->

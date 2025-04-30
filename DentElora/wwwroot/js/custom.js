@@ -102,7 +102,9 @@ function scrollToTop() {
 
 // ===Prealoder===
 function prealoader() {
-    if($('.preloader').length){
+    console.log("preloader is started")
+    if ($('.preloader').length) {
+        console.log("preloader have len")
         $('.preloader').delay(2000).fadeOut(500);
     }
 }

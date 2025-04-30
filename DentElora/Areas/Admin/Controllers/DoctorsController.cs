@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DentElora.Data;
 using DentElora.Entities;
+using DentElora.Utils;
 
 namespace DentElora.Areas.Admin.Controllers
 {
@@ -55,10 +56,11 @@ namespace DentElora.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Image")] Doctor doctor)
+        public async Task<IActionResult> Create([Bind("Id,Name,Image,Role")] Doctor doctor, IFormFile? Image)
         {
             if (ModelState.IsValid)
             {
+                if (Image is not null) doctor.Image = await FileHelper.FileLoaderAsync(Image);
                 _context.Add(doctor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,34 +89,31 @@ namespace DentElora.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Image")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Image,Role")] Doctor doctor, IFormFile? Image)
         {
             if (id != doctor.Id)
-            {
                 return NotFound();
+
+            if (!ModelState.IsValid)
+                return View(doctor);
+
+            // 1) Veritabanındaki var olan doktoru alın
+            var dbDoctor = await _context.Doctors.FindAsync(id);
+            if (dbDoctor == null)
+                return NotFound();
+
+            // 2) Sadece güncellenen alanı ata
+            dbDoctor.Name = doctor.Name;
+            dbDoctor.Role = doctor.Role;
+            // 3) Eğer yeni bir resim yüklenmişse, yeni yolunu ata; yoksa hiçbir değişiklik yapma
+            if (Image is not null)
+            {
+                dbDoctor.Image = await FileHelper.FileLoaderAsync(Image);
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(doctor);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DoctorExists(doctor.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(doctor);
+            // 4) Kaydet
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Admin/Doctors/Delete/5

@@ -1,0 +1,88 @@
+@model IEnumerable<Slider>
+<!--Start rev slider wrapper-->
+<style>
+    /* Ýçerik kutusunun yüksekliðini 200px ile sýnýrlayýp taþmayý gizliyoruz */
+    .slide-content-box.content-box.mar-lft {
+        max-height: 400px !important;
+        overflow: hidden !important;
+    }
+
+</style>
+<section class="rev_slider_wrapper">
+    <div id="slider1" class="rev_slider" data-version="5.0">
+        <ul>
+            
+
+
+@foreach(var item in Model)
+{
+    <li data-transition="random">
+        <img src="/img/@item.image"
+             alt=""
+             width="1920"
+             height="600"
+             data-bgposition="top center"
+             data-bgfit="cover"
+             data-bgrepeat="no-repeat"
+             data-bgparallax="1" />
+
+        @* Metin katmaný: sabit geniþlik, satýr sarma ve yükseklik sýnýrlý *@
+        <div class="tp-caption tp-resizeme"
+             data-x="left" data-hoffset="0"
+             data-y="top" data-voffset="165"
+             
+             data-width="600"
+             data-height="500"
+             data-whitespace="normal"
+
+             data-transform_idle="o:1;"
+             data-transform_in="x:[-175%];y:0;z:0;rX:0;rY:0;rZ:0;
+                                sX:1;sY:1;skX:0;skY:0;opacity:0.01;
+                                s:3000;e:Power3.easeOut;"
+             data-transform_out="s:1000;e:Power3.easeInOut;
+                                 s:1000;e:Power3.easeInOut;"
+             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+             data-start="1500">
+            <div class="slide-content-box content-box mar-lft" 
+                 style="max-height:200px; overflow:hidden;">
+                <h3>DentElora'ya Hoþgeldiniz'</h3>
+                <h1>Your smiles with us</h1>
+                <p>@item.Description</p>
+                <div class="button">
+                    <a class="thm-btn" href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        @* Görsel katmaný *@
+        <div class="tp-caption tp-resizeme"
+             data-x="right" data-hoffset="0"
+             data-y="bottom" data-voffset="0"
+             data-transform_idle="o:1;"
+             data-transform_in="y:[100%];z:0;
+                                rX:0deg;rY:0;rZ:0;
+                                sX:1;sY:1;skX:0;skY:0;opacity:0;
+                                s:2000;e:Power4.easeInOut;"
+             data-transform_out="s:1000;e:Power3.easeInOut;
+                                 s:1000;e:Power3.easeInOut;"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+             data-start="2900">
+            <div class="slide-content-box">
+                <div class="img-holder">
+                    <img src="/images/slides/slide-1-img.png" alt="Awesome Image" />
+                </div>
+            </div>
+        </div>
+    </li>
+}
+
+
+        </ul>
+    </div>
+</section>
+<!--End rev slider wrapper-->

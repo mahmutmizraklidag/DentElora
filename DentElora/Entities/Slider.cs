@@ -9,5 +9,7 @@ namespace DentElora.Entities
         public string? image { get; set; }
         [Display(Name = "Resim-2")]
         public string? image2 { get; set; }
+        [Display(Name = "Açıklama")]
+        public string Description { get; set; }
     }
 }

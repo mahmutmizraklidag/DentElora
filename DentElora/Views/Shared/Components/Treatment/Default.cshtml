@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Treatment>
+
+@{
+
+
+    var treatment = Model;
+
+
+
+
+    <li class="dropdown">
+        <a asp-controller="Treatments" asp-action="Index">Tedaviler</a>
+        <ul>
+            @foreach (var downmenu in treatment)
+            {
+                <li>
+                    <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@downmenu.Id">@downmenu.Title</a>
+
+                </li>
+            }
+           
+        </ul>
+    </li>
+}

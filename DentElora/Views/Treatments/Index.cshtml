@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Treatment>
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Services</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->  
+
+<!--Start services page area-->
+<section class="services-page-area">
+    <div class="container">
+        <div class="row">
+            @foreach(var item in Model)
+            {
+                <!--Start single item-->
+                <div class="col-md-4">
+                    <div class="single-service-item text-center wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s" data-wow-offset="0">
+                        <div class="img-holder">
+                            <img src="images/services/1.jpg" alt="Awesome Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    <div class="content">
+                                        <p>@item.shortDescription</p>
+                                        <a href="root-canel.html">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon-box">
+                                <div class="icon">
+                                    <span class="@item.İcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title-holder">
+                            <a href="root-canel.html"><h3>@item.Title</h3></a>
+                        </div>
+                    </div>
+                </div>
+                <!--End single item-->
+            }
+           
+           
+        </div>
+    </div>
+</section>
+<!--End services page area-->

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DentElora.Data;
 using DentElora.Entities;
+using DentElora.Utils;
+using System.Numerics;
 
 namespace DentElora.Areas.Admin.Controllers
 {
@@ -55,10 +57,12 @@ namespace DentElora.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,image,image2")] Slider slider)
+        public async Task<IActionResult> Create([Bind("id,image,image2,Description")] Slider slider, IFormFile? image, IFormFile? image2)
         {
             if (ModelState.IsValid)
             {
+                if (image is not null) slider.image = await FileHelper.FileLoaderAsync(image);
+                if (image2 is not null) slider.image2 = await FileHelper.FileLoaderAsync(image2);
                 _context.Add(slider);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,34 +91,35 @@ namespace DentElora.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,image,image2")] Slider slider)
+        public async Task<IActionResult> Edit(int id, [Bind("id,image,image2,Description")] Slider slider, IFormFile? image, IFormFile? image2)
         {
             if (id != slider.id)
-            {
                 return NotFound();
+
+            if (!ModelState.IsValid)
+                return View(slider);
+
+            // 1) Veritabanındaki var olan doktoru alın
+            var dbGallery = await _context.Sliders.FindAsync(id);
+            if (dbGallery == null)
+                return NotFound();
+
+            // 2) Sadece güncellenen alanı ata
+            dbGallery.Description = slider.Description;
+
+            // 3) Eğer yeni bir resim yüklenmişse, yeni yolunu ata; yoksa hiçbir değişiklik yapma
+            if (image is not null)
+            {
+                dbGallery.image = await FileHelper.FileLoaderAsync(image);
+            }
+            if (image2 is not null)
+            {
+                dbGallery.image2 = await FileHelper.FileLoaderAsync(image2);
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(slider);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SliderExists(slider.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(slider);
+            // 4) Kaydet
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Admin/Sliders/Delete/5

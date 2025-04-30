@@ -18,6 +18,10 @@ namespace DentElora.Data
         public DbSet<Treatment> Treatments { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<TreatmentPhoto> TreatmentPhotos { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<HomeInfo> HomeInfos { get; set; }
+        public DbSet<Service> Services { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -32,5 +36,6 @@ namespace DentElora.Data
                 password = "xyz123456"
             });
         }
+        public DbSet<DentElora.Entities.Service> Service { get; set; } = default!;
     }
 }
