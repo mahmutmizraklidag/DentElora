@@ -108,6 +108,7 @@ namespace DentElora.Areas.Admin.Controllers
             dbTreatment.shortDescription = treatment.shortDescription;
             dbTreatment.Description = treatment.Description;
             dbTreatment.İcon = treatment.İcon;
+            dbTreatment.Slug = treatment.Slug;
 
             // 3) Eğer yeni bir resim yüklenmişse, yeni yolunu ata; yoksa hiçbir değişiklik yapma
             if (Image is not null)

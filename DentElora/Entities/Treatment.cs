@@ -20,6 +20,7 @@ namespace DentElora.Entities
         [StringLength(4000, ErrorMessage = "Açıklama en fazla 4000 karakter olabilir.")]
         [Display(Name = "Açıklama")]
         public string? Description { get; set; }
+        public string? Slug { get; set; }
         [Display(Name = "Resim")]
         public string? Image { get; set; }
         [Display(Name = "İkon")]

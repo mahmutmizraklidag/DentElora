@@ -19,6 +19,7 @@ namespace DentElora.Controllers
 
             return View(model);
         }
+        [Route("/Tedavi")]
         public async Task<IActionResult> Detail(int id)
         {
             var model = await _context.Treatments.FindAsync(id);
