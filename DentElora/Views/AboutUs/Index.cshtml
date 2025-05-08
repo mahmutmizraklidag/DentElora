@@ -1,0 +1,50 @@
+﻿@model AboutUs
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Hakkımızda</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="/Home/Index">Anasayfa</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Hakkımızda</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start about us area-->
+<section class="about-page-us-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-holder">
+                    <img src="/img/@Model.Image" alt="Awesome Image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-holder martop50">
+                    <div class="sec-title">
+                        <h1>@Model.Title</h1>
+                        <span class="border"></span>
+                    </div>
+                    <div class="text">
+                        <p>@Model.Description</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+       
+    </div>
+</section>
+<!--End about us area-->

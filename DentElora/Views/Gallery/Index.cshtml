@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Gallery>
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Galeri</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="/Home/Index">Anasayfa</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">Galeri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start project with text area-->
+<section class="main-project-area">
+    <div class="container">
+        <div class="row">
+            @foreach(var item in Model)
+            {
+                <!--Start single project item-->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-project-item">
+                        <div class="img-holder">
+                            <img src="/img/@item.Image" alt=" Image">
+                            <div class="overlay-style-one">
+                                <div class="box">
+                                    @* <div class="content">
+                                        <div class="text-holder">
+                                            <a href="project-single.html">
+                                                <h3>Teeth Replacement</h3>
+                                            </a>
+                                            <span class="border"></span>
+                                            <p>DentElora</p>
+                                        </div>
+                                    </div> *@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End single project item-->
+            }
+            
+            
+        </div>
+      @*   <div class="row">
+            <div class="col-md-12">
+                <ul class="post-pagination text-center">
+                    <li><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div> *@
+    </div>
+</section>
+<!--End project with text area-->  

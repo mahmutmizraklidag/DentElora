@@ -1,0 +1,127 @@
+﻿@model Contact
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>İletişim</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="/Home/Index">Anasayfa</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">İletişim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start contact area-->
+<section class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <div class="title">
+                        <h2>İletişim Formu</h2>
+                    </div>
+                    <form id="contact-form" name="contact_form" class="default-form" action="inc/sendmail.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="form_name" value="" placeholder="İsim Soyisim*" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="form_email" value="" placeholder="Email*" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="form_phone" value="" placeholder="Tel">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="form_subject" value="" placeholder="Konu">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="form_message" placeholder="Mesaj.." required=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                <button class="thm-btn bg-1" type="submit" data-loading-text="Please wait...">Mesaj Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-info">
+                    <div class="title">
+                        <h2>İletişim</h2>
+                    </div>
+                    <p>Bizimle iletişime geçin...</p>
+                    <ul class="contact-info-list">
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-pin"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Adres:</span> @Model.Address</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-technology"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Tel:</span> @Model.Phone</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-interface"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Email:</span> @Model.Email</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-holder">
+                                <span class="flaticon-clock"></span>
+                            </div>
+                            <div class="text-holder">
+                                <h5><span>Çalışma Saatleri:</span> Pzt - Cmt: 10.00 - 18.00</h5>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End contact area-->
+<!--Start Google map area-->
+<section class="google-map-area">
+    <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195.2408369116207!2d27.136496027012804!3d38.46794587345277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd9003d26b0c9%3A0x20095e492841447c!2zw5ZaRUwgREVOVEVMT1JBIEHEnklaIFZFIETEsMWeIFNBxJ5MScSeSSBQT0xLSUzEsE7EnsSw!5e0!3m2!1str!2str!4v1746693901912!5m2!1str!2str"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<!--End Google map area-->    

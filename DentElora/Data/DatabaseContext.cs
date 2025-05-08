@@ -22,6 +22,7 @@ namespace DentElora.Data
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<HomeInfo> HomeInfos { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<AboutUs> AboutUs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

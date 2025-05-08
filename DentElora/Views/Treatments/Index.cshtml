@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<Treatment>
 <!--Start breadcrumb area-->
-<section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="left pull-left">
                     <div class="title">
-                        <h1>Services</h1>
+                        <h1>Tedaviler</h1>
                     </div>
                 </div>
                 <div class="right pull-right">
                     <ul>
-                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Services</li>
+                        <li class="active">Tedaviler</li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                 <div class="box">
                                     <div class="content">
                                         <p>@item.shortDescription</p>
-                                        <a href="root-canel.html">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                        <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@item.Id">Devamını Oku...<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="title-holder">
-                            <a href="root-canel.html"><h3>@item.Title</h3></a>
+                            <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@item.Id"><h3>@item.Title</h3></a>
                         </div>
                     </div>
                 </div>

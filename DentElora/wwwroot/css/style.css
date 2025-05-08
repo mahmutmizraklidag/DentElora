@@ -185,7 +185,27 @@ button{
     min-height: 400px;
     overflow: hidden;  
 }
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366; /* WhatsApp yeþili */
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px; /* Yatay ve dikey ortalamak için */
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    text-decoration: none;
+}
 
+    .whatsapp-float:hover {
+        background-color: #128C7E;
+        color: #FFF;
+    }
 
 
 

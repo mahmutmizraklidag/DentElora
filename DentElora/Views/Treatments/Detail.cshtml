@@ -1,7 +1,7 @@
-daturda@model Treatment
+@model Treatment
 
 <!--Start breadcrumb area-->
-<section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -12,11 +12,11 @@ daturda@model Treatment
                 </div>
                 <div class="right pull-right">
                     <ul>
-                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a asp-controller="Treatments" asp-action="Index">Tedaviler</a></li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li class="active">Root Canel</li>
+                        <li class="active">@Model.Title</li>
                     </ul>
                 </div>
             </div>
@@ -88,8 +88,8 @@ daturda@model Treatment
                             <h3>Çalýþma Saatleri</h3>
                         </div>
                         <ul class="opening-time">
-                            <li>Pzt - Cum: <span>10.00 to 18.00</span></li>
-                            <li>Cmt: <span>10.00 to 16.00</span></li>
+                            <li>Pzt - Cmt: <span>10.00 - 18.00</span></li>
+                            @* <li>Cmt: <span>10.00 to 16.00</span></li> *@
                         </ul>
                     </div>
                     <!--Ens single sidebar-->
@@ -105,7 +105,7 @@ daturda@model Treatment
                                         <span class="flaticon-pin"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Park Drive, Varick 2nd Str <br>NY 10012, USA</h5>
+                                        <h5>Gümüþpala, 7020. Sk No:15 <br>35510 Bayraklý/Ýzmir</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -113,7 +113,7 @@ daturda@model Treatment
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Support@Dentalcare.com</h5>
+                                        <h5>kolaybahri8910@gmail.com</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -121,7 +121,7 @@ daturda@model Treatment
                                         <span class="flaticon-technology-1"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>(123) 0200 12345 & 7890</h5>
+                                        <h5>+90 532 532 32 32</h5>
                                     </div>
                                 </li>
                             </ul>

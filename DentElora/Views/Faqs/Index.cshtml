@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FAQ>
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="left pull-left">
+                    <div class="title">
+                        <h1>Sıkça Sorulan Sorular</h1>
+                    </div>
+                </div>
+                <div class="right pull-right">
+                    <ul>
+                        <li><i class="fa fa-home home" aria-hidden="true"></i><a href="/Home/Index">Anasayfa</a></li>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                        <li class="active">SSS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start faq content area-->
+<section class="faq-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+                <div class="content-box">
+                    <div class="sec-title-two">
+                        <h2>SSS</h2>
+                    </div>
+                    <div class="accordion-box">
+                        @foreach(var item in Model)
+                        {
+                            <!--Start single accordion box-->
+                            <div class="accordion accordion-block">
+                                <div class="accord-btn"><h4>@item.Question</h4></div>
+                                <div class="accord-content">
+                                    <p>@item.Answer</p>
+                                </div>
+                            </div>
+                            <!--End single accordion box-->
+                        }
+                      
+                   
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--End faq content area-->
