@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<Treatment>
+
+@{
+    ViewData["Title"] = "Tedaviler";
+    ViewData["Description"] = "DentElora Tedaviler Sayfası";
+}
 <!--Start breadcrumb area-->
 <section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
     <div class="container">
@@ -37,7 +42,7 @@
                                 <div class="box">
                                     <div class="content">
                                         <p>@item.shortDescription</p>
-                                        <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@item.Id">Devamını Oku...<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                        <a asp-controller="Treatments" asp-action="Detail" asp-route-slug="@item.Slug">Devamını Oku...<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +53,7 @@
                             </div>
                         </div>
                         <div class="title-holder">
-                            <a asp-controller="Treatments" asp-action="Detail" asp-route-id="@item.Id"><h3>@item.Title</h3></a>
+                            <a asp-controller="Treatments" asp-action="Detail" asp-route-slug="@item.Slug"><h3>@item.Title</h3></a>
                         </div>
                     </div>
                 </div>

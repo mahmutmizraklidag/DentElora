@@ -1,5 +1,8 @@
 @model Treatment
-
+@{
+    ViewData["Title"] = Model.Title;
+    ViewData["Description"] = Model.Description?.Substring(0, Math.Min(150, Model.Description.Length)) ?? "DentElora Tedavi Sayfasý";
+}
 <!--Start breadcrumb area-->
 <section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
     <div class="container">

@@ -1,5 +1,8 @@
 ﻿@model DentElora.Models.HomePageViewModel
-
+@{
+    ViewData["Title"] = "Anasayfa";
+    ViewData["Description"] = "DentElora Anasayfa";
+}
 
 @await Html.PartialAsync("_SliderPartial", Model.Sliders)
 
