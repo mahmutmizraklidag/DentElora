@@ -3,6 +3,14 @@
     ViewData["Title"] = "Galeri";
     ViewData["Description"] = "DentElora Galeri Sayfası";
 }
+<style>
+    body::after {
+        content: "";
+        display: block;
+        height: 50px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <!--Start breadcrumb area-->
 <section class="breadcrumb-area" style="background-image: url(/images/resources/bg.jpg);">
     <div class="container">
@@ -35,9 +43,11 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="single-project-item">
                         <div class="img-holder">
+                            <a href="/img/@item.Image" class="glightbox" data-gallery="project-gallery">
                             <img src="/img/@item.Image" alt=" Image">
-                            <div class="overlay-style-one">
-                                <div class="box">
+                            </a>
+                            @* <div class="overlay-style-one">
+                                <div class="box"> *@
                                     @* <div class="content">
                                         <div class="text-holder">
                                             <a href="project-single.html">
@@ -47,8 +57,8 @@
                                             <p>DentElora</p>
                                         </div>
                                     </div> *@
-                                </div>
-                            </div>
+                              @*   </div>
+                            </div> *@
                         </div>
                     </div>
                 </div>
@@ -71,3 +81,11 @@
     </div>
 </section>
 <!--End project with text area-->  
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+    const lightbox = GLightbox({
+        selector: '.glightbox',
+        loop: true // ⭐️ Bu satır eklendi: galeri döngüsü açık
+    });
+</script>

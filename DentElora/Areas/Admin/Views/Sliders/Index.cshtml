@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-warning btn-lg">EKLE</a>
 </p>
-<table class="table">
+<table class="table table-hover table-striped">
     <thead>
         <tr>
             <th>
@@ -34,12 +34,11 @@
                     <img src="/img/@item.image" alt="" height="75" />
             </td>
             <td>
-                    <img src="/img/@item.image2" alt="" height="75" />
+                    <img src="/img/@item.image2" alt="" height="75" width="100" />
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Düzenle</a> |
+                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Sil</a>
             </td>
         </tr>
 }
